@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # 애플리케이션의 실행 시점에 자동으로 table을 만들어주는 모드(기존 table을 삭제하고 재생성함)
+    properties:
+      hibernate:
+#        show_sql: true -> 로그를 System.out으로 출력
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug # jsp나 하이버네이트의 모든 로그를 로거를 통해 출력
+    org.hibernate.type: trace
+
+
