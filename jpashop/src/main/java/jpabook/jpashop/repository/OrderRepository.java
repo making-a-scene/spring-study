@@ -37,7 +37,13 @@ public class OrderRepository {
     }
 
     // Querydsl
-//    public List<Order> findAll(OrderSearch orderSearch) {
+//    public List<Order> findAllByString(OrderSearch orderSearch) {
+//
+//        String memberName = orderSearch.getMemberName();
+//
+//        return em.createQuery("select o from Order o where o.member = :member")
+//                .setParameter("member", orderSearch.getMemberName())
+//                .getResultList();
 //
 //    }
 

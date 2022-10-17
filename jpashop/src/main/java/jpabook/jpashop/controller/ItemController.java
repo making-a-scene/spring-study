@@ -59,16 +59,22 @@ public class ItemController {
     }
 
     @PostMapping("items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form, @PathVariable String itemId) {
-        Book book = new Book();
-        book.setId(form.getId());
-        book.setName(form.getName());
-        book.setPrice(form.getPrice());
-        book.setStockQuantity(form.getStockQuantity());
-        book.setAuthor(form.getAuthor());
-        book.setIsbn(form.getIsbn());
+    public String updateItem(@ModelAttribute("form") BookForm form, @PathVariable Long itemId) {
+//         Book book = new Book();
+//         book.setId(form.getId());
+//         book.setName(form.getName());
+//         book.setPrice(form.getPrice());
+//         book.setStockQuantity(form.getStockQuantity());
+//         book.setAuthor(form.getAuthor());
+//         book.setIsbn(form.getIsbn());
+//         // 새로 생성한 book 엔티티는 식별자인 id 값을 이미 가지고는 있지만(== jpa에서 관리한 적이 있던 엔티티임), EntityManager를 통해 영속성 컨텍스트에 등록한 적은 없기 때문에
+//        // 더 이상 jpa가 관리하고 있지 않음... -> 준영속 엔티티
 
-        itemService.saveItem(book);
+//        itemService.saveItem(book);
+
+        itemService.updateItem(itemId, form.getName(), form.getPrice(), form.getStockQuantity());
+        // Book 엔티티 자체를 넘겨주는 게 아니라, 수정이 필요한 변수 값만 form에서 get하여 넘겨주는 게 훨씬 깔끔함...!
+        // 수정이 필요한 변수가 많아서 파라미터가 너무 많아지는 경우엔 dto를 따로 만들어 dto 객체 하나만 넘겨주면 됨
 
         return "redirect:/items";
     }

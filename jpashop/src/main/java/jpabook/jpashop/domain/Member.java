@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ public class Member {
     @Column(name = "member_id") // pk의 column명 설정
     private Long id;
 
+    // 근데 이 NotEmpty 속성이 모든 api에 적용되는 건 아닐 수도 있는데 엔티티에 떡하니 이걸 붙여서 검증하는 게 맞을까?
+    @NotEmpty
     private String name;
 
     @Embedded

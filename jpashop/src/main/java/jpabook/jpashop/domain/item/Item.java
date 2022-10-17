@@ -2,9 +2,9 @@ package jpabook.jpashop.domain.item;
 
 import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.exception.NotEnoughStockException;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 싱글 테이블 전략으로 설정
 @DiscriminatorColumn(name = "dtype")
-@Getter
+@Getter @Setter
 public abstract class Item {
 
     @Id
@@ -44,6 +44,7 @@ public abstract class Item {
     // 재고 감소
     public void removeStock(int quantity) {
         int restStock = this.stockQuantity - quantity;
+        System.out.println(this.getStockQuantity()+" - "+ quantity+" == "+restStock);
         if (restStock < 0) {
             throw new NotEnoughStockException("need more stock");
         }
