@@ -35,31 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-../.DS_Store
-../bootstrap-5.2.0-dist/
-../core-basic/.DS_Store
-../core-basic/core/.DS_Store
-../core-basic/core/.gitignore
-../core-basic/core/build.gradle
-../core-basic/core/gradle/
-../core-basic/core/gradlew
-../core-basic/core/gradlew.bat
-../core-basic/core/settings.gradle
-../core-basic/core/src/main/java/hello/core/AppConfig.java
-../core-basic/core/src/main/java/hello/core/CoreApplication.java
-../core-basic/core/src/main/java/hello/core/MemberApp.java
-../core-basic/core/src/main/java/hello/core/OrderApp.java
-../core-basic/core/src/main/java/hello/core/discount/
-../core-basic/core/src/main/java/hello/core/member/
-../core-basic/core/src/main/java/hello/core/order/
-../core-basic/core/src/main/resources/application.properties
-../core-basic/core/src/test/java/hello/core/CoreApplicationTests.java
-../core-basic/core/src/test/java/hello/core/discount/
-../core-basic/core/src/test/java/hello/core/member/MemberServiceTest.java
-../core-basic/core/src/test/java/hello/core/order/OrderServiceTest.java
-"../core-basic/\354\212\244\355\224\204\353\247\201 \355\225\265\354\213\254 \354\233\220\353\246\254 - \352\270\260\353\263\270\355\216\270 \354\236\220\353\243\214/"
-../hello-spring/
-../spring security.pdf
-../spring-study/
-"../\352\260\225\354\235\230\354\236\220\353\243\214/"
