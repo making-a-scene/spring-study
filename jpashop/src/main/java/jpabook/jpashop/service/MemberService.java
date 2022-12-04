@@ -25,6 +25,12 @@ public class MemberService {
         return member.getId();
     }
 
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
+
     // 가입하려는 회원이 중복 회원이라면 예외를 발생시키는 메소드
     private void validateDuplicateMember(Member member) {
         List<Member> findMembers = memberRepository.findByName(member.getName());
