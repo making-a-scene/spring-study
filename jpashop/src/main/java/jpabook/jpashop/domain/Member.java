@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,9 +26,7 @@ public class Member {
     private Address address;
 
     @OneToMany(mappedBy = "member") // 연관관계의 주인이 아닌 테이블에는 mappedBy 옵션을 줘야 함
-    // 연관관계 주인인 테이블의 "member"라는 필드에 의해 매핑된다는 뜻
-    // 외래 키가 저장되어 있는 위치
-    // Order 엔티티 중 member 필드의 id 값이 자기 자신의 id 값과 같으면 연관관계에 있다.
+    @JsonIgnore
     private List<Order> orders = new ArrayList<>();
     // 컬렉션은 필드 선언시에 바로 초기화하는 것이 안전하다.(NPE 예방)
     /*

@@ -24,13 +24,12 @@ public class ItemService {
     }
 
     @Transactional
-    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+    public void updateItem(Long itemId, String name, int price) {
         // view로부터 받아온 수정된 객체인 param 내부 필드의 값을 기존 영속성 엔티티인 findItem에 set하는 방식,,,!
         // 이렇게 하면 영속성 엔티티를 사용해 update를 하므로 flush될 때 db에 변경 사항이 저장됨.
         Item findItem = itemRepository.findOne(itemId);
         findItem.setPrice(price);
         findItem.setName(name);
-        findItem.setStockQuantity(stockQuantity);
     }
 
     public List<Item> findItems() {

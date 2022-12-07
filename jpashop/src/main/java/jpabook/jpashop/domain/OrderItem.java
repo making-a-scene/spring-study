@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.jpashop.domain.item.Item;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class OrderItem {
 
     @ManyToOne(fetch = LAZY) // Order에는 여러 OrderItem이 존재할 수 있음
     @JoinColumn(name = "order_id")
+    @JsonIgnore
     private Order order;
 
     private int orderPrice; // 상품 가격

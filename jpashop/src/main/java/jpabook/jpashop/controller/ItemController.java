@@ -72,7 +72,7 @@ public class ItemController {
 
 //        itemService.saveItem(book);
 
-        itemService.updateItem(itemId, form.getName(), form.getPrice(), form.getStockQuantity());
+        itemService.updateItem(itemId, form.getName(), form.getPrice());
         // Book 엔티티 자체를 넘겨주는 게 아니라, 수정이 필요한 변수 값만 form에서 get하여 넘겨주는 게 훨씬 깔끔함...!
         // 수정이 필요한 변수가 많아서 파라미터가 너무 많아지는 경우엔 dto를 따로 만들어 dto 객체 하나만 넘겨주면 됨
 
