@@ -102,4 +102,14 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    public List<Order> findAllWithMemberDelivery() {
+        // 엔티티 전체를 가져오기 때문에 아래 findOrderDtos()의 jpql에 비해 재사용이 용이함.
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
+
+
 }
